@@ -6,13 +6,14 @@
     <title>Online Code Editor</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/23cd7b8172.js" crossorigin="anonymous"></script>
+    <script src="https://sonacollegeoftechnology4-dev-ed.develop.lightning.force.com/lightning/lightning.out.js"></script>
 </head>
 <body>
     <div class="head">
         <h1>Online Code Editor <i class="fa-solid fa-laptop-code"></i></h1>
     </div>
     <div class="container">
-        
+        <p>Hello</p>
         <div class="left">
             <label><i class="fa-brands fa-html5"></i> HTML</label>
             <textarea id="html-id" onkeyup="run()"></textarea>
@@ -27,7 +28,23 @@
             <iframe id="output"></iframe>
         </div>
     </div>
+    <script>
+        $Lightning.use("c:LightningOutApp",   // Your Aura App that includes the LWC
+            function() {
+                $Lightning.createComponent(
+                    "c:auraWrapperLWC",      // Aura component wrapping the LWC
+                    {},
+                    "lightning",            // Target div ID
+                    function(cmp) {
+                        console.log("Component loaded successfully!");
+                    }
+                );
+            },
+            "https://sonacollegeoftechnology4-dev-ed.develop.lightning.force.com" // Org base URL
+        );
+    </script>
     <script src="./index.js"></script>
+    
    
 </body>
 </html>
